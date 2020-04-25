@@ -1,3 +1,11 @@
 {{ define "content" }}
   {{ partial "home.html" . }}
+  <section class="container list">
+    <ul>
+      {{- range .Paginator.Pages -}}
+        {{- .Render "li" -}}
+      {{- end -}}
+    </ul>
+    {{ partial "pagination.html" . }}
+  </section>
 {{ end }}
